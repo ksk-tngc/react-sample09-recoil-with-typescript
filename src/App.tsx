@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Center, ChakraProvider, Stack } from '@chakra-ui/react';
+import '@fontsource/yusei-magic';
+import { VFC } from 'react';
+import { CompleteTodos } from './components/organisms/CompleteTodos';
+import { IncompleteTodos } from './components/organisms/IncompleteTodos';
+import { InputTodo } from './components/organisms/InputTodo';
+import { TodoProvider } from './providers/TodoProvider';
+import { theme } from './theme/theme';
 
-function App() {
+export const App: VFC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TodoProvider>
+      <ChakraProvider theme={theme}>
+        <Center mt="10">
+          <Stack>
+            <InputTodo />
+            <IncompleteTodos />
+            <CompleteTodos />
+          </Stack>
+        </Center>
+      </ChakraProvider>
+    </TodoProvider>
   );
-}
-
-export default App;
+};
