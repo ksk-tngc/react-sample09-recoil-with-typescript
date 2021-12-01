@@ -1,17 +1,19 @@
 ## 概要
 
-React + TypeScript と Chakra UI を使用した簡単な ToDo アプリです。
+React + TypeScript で Recoil を用いた状態管理のサンプルです。
 
 以下の要素を含みます：
 
 * TypeScript
 * Chakra UI
 * Atomic Design
-* Context (Global State)
+* Recoil (Global State)
 * カスタムフック
 * 再レンダリングの最適化 (memo, useCallback)
 * Fontsource
 * React Icons
+
+※ [Context を使用した状態管理](https://github.com/ksk-tngc/react-sample08-todo-app-using-typescript-and-chakra-ui)を Recoil に変更したサンプルになります。
 
 ## レンダリング
 
@@ -35,4 +37,4 @@ React + TypeScript と Chakra UI を使用した簡単な ToDo アプリです�
 <img width="550" src="https://user-images.githubusercontent.com/59589496/144054933-5c07becd-d0fc-45ce-973e-8f002f957e85.png">
 
 ## フォルダ構成
-<img width="320" src="https://user-images.githubusercontent.com/59589496/144055498-c41f503e-74b0-4c67-a07b-52f0845f0271.png">
+<img width="340" src="https://user-images.githubusercontent.com/59589496/144193480-41fd9551-7b0f-45a5-97e8-9fdc1cfb1f58.png">

@@ -1,9 +1,13 @@
 import { useCallback } from 'react';
-import { useTodoContext } from '../hooks/useTodoContext';
+import { useRecoilState } from 'recoil';
+import { inputTodoState } from '../store/inputTodoState';
+import { todoState } from '../store/todoState';
 import { Todos } from '../types/Todos';
 
 export const useTodos = () => {
-  const { inputTodo, setInputTodo, todos, setTodos } = useTodoContext();
+  // Global state by Recoil
+  const [inputTodo, setInputTodo] = useRecoilState(inputTodoState);
+  const [todos, setTodos] = useRecoilState(todoState);
 
   /** ToDo追加 */
   const addTodo = useCallback(() => {

@@ -1,15 +1,15 @@
 import { Center, ChakraProvider, Stack } from '@chakra-ui/react';
 import '@fontsource/yusei-magic';
 import { VFC } from 'react';
+import { RecoilRoot } from 'recoil';
 import { CompleteTodos } from './components/organisms/CompleteTodos';
 import { IncompleteTodos } from './components/organisms/IncompleteTodos';
 import { InputTodo } from './components/organisms/InputTodo';
-import { TodoProvider } from './providers/TodoProvider';
 import { theme } from './theme/theme';
 
 export const App: VFC = () => {
   return (
-    <TodoProvider>
+    <RecoilRoot>
       <ChakraProvider theme={theme}>
         <Center mt="10">
           <Stack>
@@ -19,6 +19,6 @@ export const App: VFC = () => {
           </Stack>
         </Center>
       </ChakraProvider>
-    </TodoProvider>
+    </RecoilRoot>
   );
 };

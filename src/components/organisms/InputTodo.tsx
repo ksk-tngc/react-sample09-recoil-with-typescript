@@ -1,7 +1,8 @@
 import { HStack } from '@chakra-ui/react';
 import { ChangeEvent, memo, useCallback, VFC } from 'react';
-import { useTodoContext } from '../../hooks/useTodoContext';
+import { useRecoilState } from 'recoil';
 import { useTodos } from '../../hooks/useTodos';
+import { inputTodoState } from '../../store/inputTodoState';
 import { BoxArea } from '../atoms/BoxArea';
 import { InputText } from '../atoms/InputText';
 import { PrimaryButton } from '../atoms/PrimaryButton';
@@ -10,7 +11,7 @@ import { PrimaryButton } from '../atoms/PrimaryButton';
  * ToDo入力エリア
  */
 export const InputTodo: VFC = memo(() => {
-  const { inputTodo, setInputTodo } = useTodoContext();
+  const [inputTodo, setInputTodo] = useRecoilState(inputTodoState);
   const { addTodo } = useTodos();
 
   const onChangeInputTodo = useCallback(

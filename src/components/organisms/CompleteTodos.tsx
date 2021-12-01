@@ -1,6 +1,7 @@
 import { Fade, List, useDisclosure } from '@chakra-ui/react';
 import { memo, useEffect, VFC } from 'react';
-import { useTodoContext } from '../../hooks/useTodoContext';
+import { useRecoilValue } from 'recoil';
+import { todoState } from '../../store/todoState';
 import { BoxAreaWithTitle } from '../molecules/BoxAreaWithTitle';
 import { CompleteTodoItem } from '../molecules/CompleteTodoItem';
 
@@ -8,7 +9,7 @@ import { CompleteTodoItem } from '../molecules/CompleteTodoItem';
  * 完了したToDoエリア
  */
 export const CompleteTodos: VFC = memo(() => {
-  const { todos } = useTodoContext();
+  const todos = useRecoilValue(todoState);
   const { isOpen, onOpen } = useDisclosure();
 
   // Fadeのトリガー
